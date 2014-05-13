@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+.topic_eaq{
+	font-size:20px;
+	color:#999999;
+	padding-bottom:15px;
+}
+
+.faq_toc{
+	font-size:16px;
+	color:#093;
+	padding-left:5px;
+	padding-bottom:0px;
+}
+
+#faq_line{
+	padding-left:20px;
+	width:640px;
+	font-size:14px;
+	color:#666;
+	text-decoration:none;
+	
+}
+
+#faq_line:hover{
+	text-decoration:underline;
+	color:#CC9933;
+	padding-bottom:5px;
+}
+
+#content_faq{
+	margin-top:5px;
+	margin-bottom:5px;
+	width:700px;
+	height:auto;
+	font-size:13px;
+	padding-left:20px;
+}
+
+.para{
+	padding-left:20px;
+	width:650px;
+	text-indent:20px;
+}

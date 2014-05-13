@@ -1,0 +1,516 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	color:#000000;
+	background-color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.logo{
+	background-color:#333;
+	width:100%;
+	height:130px;
+	margin:auto;
+}
+
+.logo2{
+	background-color:#333;
+	width:100%;
+	height:130px;
+	clear:both;
+}
+
+#wrap{
+	margin-left:auto;
+	margin-right:auto;
+	width:945px;
+	height:auto;
+}
+
+
+.para{
+	margin-right:0px;
+	float:right;
+	margin-top:-40px;
+	font-size:10px;
+	color:#FFF;
+}
+
+.main_toc{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:500px;
+	border-radius:8px;
+}
+
+.main_toc2{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:550px;
+	border-radius:8px;
+}
+
+.main_toc3{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:420px;
+	border-radius:8px;
+}
+
+.main_toc4{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:450px;
+	border-radius:8px;
+}
+
+.main_toc5{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:550px;
+	border-radius:8px;
+}
+
+.main_toc6{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:450px;
+	border-radius:8px;
+}
+
+.main_toc7{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:550px;
+	border-radius:8px;
+}
+
+.main_toc8{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:450px;
+	border-radius:8px;
+}
+
+.main_toc9{
+	font-family:"DIN";
+	font-size:55px;
+	color:#FFF;
+	font-weight:400;
+	margin-top:30px;
+	letter-spacing:5px;
+	background-color:#2D2D2D;
+	width:450px;
+	border-radius:8px;
+}
+
+#menu_wrap{
+	width:250px;
+	height:auto;
+	float:left;
+	margin-bottom:10px;
+}
+
+#control_set{
+	width:220px;
+	height:45px;
+	margin-top:15px;
+	margin-bottom:5px;
+	color:#FFF;
+	margin-left:0;
+	background-color:#000;
+	border-radius:13px;
+	float:left;
+}
+
+.toc_control{
+	font-family:"DIN";
+	font-size:22px;
+	color:#FFF;
+	font-weight:300;
+	margin-top:10px;
+	margin-left:10px;
+	letter-spacing:2px;
+}
+
+
+#my_profile{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	border-radius:12px;
+	background-color:#787878;
+	float:left;
+}
+#edit_profile{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	border-radius:12px;
+	background-color:#787878;
+	float:left;
+}
+
+#edit_aboutus{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	border-radius:12px;
+	background-color:#787878;
+	float:left;
+}
+
+#password{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	border-radius:12px;
+	background-color:#A2A2A2;
+	float:left;
+}
+
+#new_admin{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	border-radius:12px;
+	background-color:#CECECE;
+	float:left;
+}
+
+#invoice{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	border-radius:12px;
+	background-color:#E9E9E9;
+	float:left;
+}
+
+#add_product{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	border-radius:12px;
+	background-color:#3E3E3E;
+	float:left;
+}
+
+#edit_product{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	border-radius:12px;
+	background-color:#686868;
+	float:left;
+}
+
+#remove_product{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	border-radius:12px;
+	background-color:#929292;
+	float:left;
+}
+
+#product_image{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	border-radius:12px;
+	background-color:#BCBCBC;
+	float:left;
+}
+
+#customer{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	border-radius:12px;
+	background-color:#E6E6E6;
+	float:left;
+}
+
+#contacts{
+	width:220px;
+	height:40px;
+	margin-top:10px;
+	margin-left:0;
+	border-radius:12px;
+	background-color:#E6E6E6;
+	float:left;
+}
+
+
+#log_history{
+	width:220px;
+	height:40px;
+	margin-top:5px;
+	margin-left:0;
+	border-radius:12px;
+	background-color:#4D4D4D;
+	float:left;
+}
+
+.my_style:hover{
+	opacity:0.7;
+}
+
+.toc{
+	font-family:"DIN";
+	font-size:18px;
+	color:#FFF;
+	font-weight:200;
+	margin-top:10px;
+	margin-left:10px;
+	letter-spacing:2px;
+}
+
+.toc:hover{
+	color:#DFDFDF;
+	font-weight:100;
+}
+
+.profile_link{
+	text-decoration:none;
+}
+
+
+#admin_content{
+	width:680px;
+	height:auto;
+	float:left;
+	margin-left:10px;
+	background-color:#B0B0B0;
+	border-radius:8px;
+}
+
+
+.line{
+	margin-bottom:10px;
+}
+
+.detail{
+	font-size:16px;
+	font-family:"DIN"
+	color:#333;
+	float:left;
+	width:150px;
+	margin-left:5px;
+	background-color:#FEF9F5;
+	padding:8px;
+}
+
+.detail2{
+	font-size:16px;
+	font-family:"DIN"
+	color:#333;
+	float:left;
+	width:250px;
+	margin-left:5px;
+	/*background-color:#FEF9F5;*/
+	padding:8px;
+}
+
+.about_user{
+	font-size:16px;
+	font-family:"DIN"
+	color:#333;
+	float:left;
+	width:350px;
+	margin-left:5px;
+	background-color:#FEF9F5;
+	padding:8px;
+}
+
+
+.about_user2{
+	font-size:16px;
+	font-family:"DIN"
+	color:#333;
+	float:left;
+	width:350px;
+	margin-left:5px;
+	/*background-color:#FEF9F5;*/
+	padding:0;
+}
+
+
+.command{
+	font-size:16px;
+	color:#333;
+	margin-left:5px;
+	background-color:#FEF9F5;
+	padding:8px;
+	float:left;
+}
+
+.edit{
+	float:left;
+	color:#000;
+	text-decoration:none;
+}
+
+.edit:hover{
+	color:#F00;
+	text-decoration:underline;
+}
+
+.delete{
+	float:left;
+	color:#000;
+	text-decoration:none;
+}
+
+.delete:hover{
+	color:#F00;
+	text-decoration:underline;
+}
+
+.menu_line{
+	width:220px;
+	color:#000;
+	height:1px;
+	margin-bottom:18px;
+	float:left;
+}
+
+.box{
+	margin-bottom:0;
+	margin-top:0;
+	font-size:16px;
+	color:#333;
+	margin-left:5px;
+	padding-bottom:0;
+	padding-top:0;
+	height:30px;
+	width:320px;	
+}
+	
+.create_button{
+	font-size:16px;
+	font-family:"DIN"
+	color:#333;
+	float:left;
+	width:50px;
+	margin-left:5px;
+	background-color:#0CF;
+	padding:8px;
+}
+
+.create_button:hover{
+	background-color:#C00;
+	cursor:pointer;
+	color:#FFF;
+}
+
+.logout{
+	font-size:12px;
+	color:#FFF;
+}
+
+.logout:hover{
+	text-decoration:none;
+	color:#F00;
+}
+
+.invoice{
+	width:auto;
+	height:auto;
+	color:#000;
+	font-family:"DIN";
+	margin-top:10px;
+}
+
+.head_row{
+	background-color:#333;
+	color:#FFF;
+	width:auto;
+	height:auto;
+}
+
+.head_toc{
+	width:auto;
+	height:auto;
+	padding:4px;
+	font-size:18px;
+}
+
+.data_row1{
+	background-color:#A7A7A7;
+	width:auto;
+	height:auto;
+}
+
+.data_row2{
+	width:auto;
+	height:auto;
+}
+
+
+.data{
+	width:auto;
+	height:auto;
+	padding:4px;
+	font-size:16px;
+}
+
+

@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+.cart_head{
+	color:#7D7D7D;
+	font-size:20px;
+	letter-spacing:1px;
+	font-weight:100;
+}
+
+.cart_inside{
+	border:solid #E0E0E0 1px;
+	width:958px;
+	height:auto;
+	font-family:"DIN";
+	color:#FFF;
+}
+
+.c_t_head{
+	background-color:#000;
+	height:30px;
+}
+
+
+.content_cart{
+	background-color:#FFF;
+	color:#000;
+	margin-top:0;
+}
+
+th{
+	font-style:normal;
+	font-weight:normal;
+}
+
+.qty{
+	width:25px;
+}
+
+.name_shoe{
+	margin-top:20px;
+}
+
+
+#table_footer{
+	background-color:#CCC;
+	width:958px;
+	height:33px;
+	font-family:"DIN";
+}
+
+.continue{
+	float:left;
+	background-color:#000;
+	color:#FFF;
+	padding:6px;
+	margin-left:2px;
+}
+
+.clear_cart{
+	float:left;
+	background-color:#C00;
+	color:#FFF;
+	padding:6px;
+	margin-left:600px;
+	
+}
+
+
+.update_cart{
+	float:right;
+	background-color:#009933;
+	color:#FFF;
+	padding:6px;
+	margin-right:3px;
+	margin-top:-33px;
+}
+
+.update_cart:hover{
+	background-color:#00CC33;
+}
+
+.clear_cart:hover{
+	background-color:#FF6A6A;
+}
+
+
+.continue:hover{
+	background-color:#333;
+}
+
+.bottam_sec{
+	width:960px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+.empty{
+	width:600px;
+	height:250px;
+	float:left;
+}
+
+
+.tot_area{
+	margin-left:600px;
+	width:300px;
+	float:right;
+	height:200px;
+	margin-top:-230px;
+	background-color:#CCC;
+}
+
+.grand_tot{
+	font-family:"DIN";
+	margin-left:23px;
+	margin-top:12px;
+}
+
+.grand_tot_cel{
+	padding:6px;
+}
+
+
+.procead{
+	background-color:#039;
+	padding:12px;
+	width:200px;
+	border-radius:5px;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:"DIN";
+}
+
+
+.procead:hover{
+	background-color:#06C;
+}
+
+.pros_link{
+	text-decoration:none;
+	color:#FFF;
+}

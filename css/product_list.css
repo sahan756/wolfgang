@@ -1,0 +1,285 @@
+@charset "utf-8";
+/* CSS Document */
+
+.tag_direction{
+	font-size:10px;
+	margin-left:290px;
+	color:#CCF;
+}
+
+.product_head{
+	margin-left:290px;
+	color:#6B6B6B;
+	font-style:normal;
+	font-weight:100;
+	margin-top:-10px;
+}
+
+/***************Production Selection option**************/	
+
+.selection_option{
+	width:230px;
+	height:auto;
+	/*border:solid #CCC 1px;*/
+}
+
+.selection_head{
+	color:#6B6B6B;
+	font-style:normal;
+	font-size:14px;
+	font-weight:50;
+}
+.head_line{
+	color:#CCC;
+	width:200px;
+	float:left;
+	margin-top:-10px;
+	opacity:0.5;
+}
+
+.category_select{
+	padding-left:8px;
+	color:#09F;
+	font-size:12px;
+	margin-top:-5px;
+}
+
+.color{
+	margin-left:8px;
+	color:#6B6B6B;
+	font-size:10px;
+	border:solid #6B6B6B 1px;
+	border-right:solid #6B6B6B 18px;
+	padding-left:3px;
+	padding-bottom:3px;
+	padding-top:3px;
+	width:200px;
+	height:auto;
+	margin-top:-28px;
+	opacity:0.8;
+}
+
+.value{
+	font-size:10px;
+	margin-bottom:-20px;
+}
+
+.value_first{
+	font-size:10px;
+	margin-bottom:-20px;
+	margin-top:-2px;
+}
+
+.value_last{
+	font-size:10px;
+	margin-bottom:-12px;
+}
+
+
+
+/*****************Product listning area*****************/
+
+.product_list{
+	width:715px;
+	height:auto;
+	/*border:solid #CCF 1px;*/
+	margin-left:240px;
+	margin-top:-640px;
+	float:left;
+	clear:both;
+	margin-bottom:20px;
+}
+
+.products{
+	list-style:none;
+	margin-bottom:50px;
+	margin-top:10px;
+}
+
+.item{
+	margin-top:5px;
+	margin-left:15px;
+	margin-right:15px;
+	float:left;
+}
+
+.imageofproduct{
+	text-decoration:none;
+	border:solid #F2F2F2 1px;
+	width:190px;
+	height:226px;
+}
+
+.imageofproduct:hover{
+	border:solid #E1E1E1 1px;
+}
+
+.p_title{
+	color:#3A3A3A;
+	font-size:13px;
+}
+
+.P_titlelink{
+	color:#3A3A3A;
+	font-size:13px;
+	text-decoration:none;
+}
+
+.P_titlelink:hover{
+	color:#969696;
+}
+
+.price{
+	font-weight:200;
+	font-style:normal;
+	margin-top:-28px;
+	font-size:18px;
+}
+
+.cart{
+	font-size:11px;
+	margin-top:-28px;
+	color:#09F;
+}
+
+.addtocart{
+	color:#09F;
+	text-decoration:none;
+}
+
+.addtocart:hover{
+	color:#FF0000;
+}
+
+.wishlist{
+	font-size:8.5px;
+	margin-top:-26px;
+	color:#09F;
+	margin-left:110px;
+
+}
+
+
+.wishlist_link{
+	color:#09F;
+}
+
+.wishlist_link:hover{
+	color:#FF0000;
+}
+
+
+/*******************Gift Voucher**************************/
+
+.product_list2{
+	width:715px;
+	height:auto;
+	/*border:solid #CCF 1px;*/
+	margin-left:240px;
+	margin-top:-150px;
+	float:left;
+	clear:both;
+	margin-bottom:20px;
+}
+
+.tag_direction2{
+	font-size:10px;
+	/*margin-left:250px;*/
+	color:#CCF;
+}
+
+
+
+/*****************About us & Contact us*****************/
+
+.product_head2{
+	/*margin-left:250px;*/
+	color:#6B6B6B;
+	font-style:normal;
+	font-weight:100;
+	margin-top:-10px;
+}
+
+.full_detail{
+	font-size:14px;
+}
+
+.contact_info{
+	float:left;
+	padding-left:15px;
+	padding:5px;
+	font-size:14px;
+}
+
+.contact_form{
+	border:solid #ccc 1px;
+	background-color:#E1F8FF;
+	padding:10px;
+	float:right;
+	margin-bottom:20px;
+}
+
+.holething{
+	background-color:#FFF8DF;
+	border:solid #333 1px;
+	padding:10px;
+	height:490px;
+}
+
+.separate_line{
+	margin-top:-12px;
+	opacity:0.6;
+}
+
+
+/*******************Map & Store Locater******************/
+
+.contact_map{
+	float:right;
+	border:solid #333 1px;
+	width:600px;
+	margin-top:10px;
+	height:470px;
+	
+}
+
+.location{
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+	width:200px;
+	height:150px;
+	border:solid #333 1px;
+	margin-bottom:30px;
+}
+
+.loc_detail{
+	float:left;
+	margin-left:6px;
+	/*border:solid #000 1px;*/
+}
+
+.location_content{
+	margin-left:20px;
+	/*border:solid #F00 1px;*/
+	width:auto;
+	height:auto;
+	float:left;
+}
+
+.holething2{
+	background-color:#FFF8DF;
+	border:solid #333 1px;
+	padding:10px;
+	height:700px;
+}
+
+.loc_link{
+	color:#000;
+	font-size:16px;
+	text-decoration:none;
+}
+
+.loc_link:hover{
+	text-decoration:underline;
+}

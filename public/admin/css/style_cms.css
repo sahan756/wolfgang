@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+
+.search_tabel{
+	font-family:"DIN";
+	margin-left:15px;
+}
+
+.search_butt{
+	background-color:#06F;
+	color:#FFF;
+	border-radius:4px;
+	width:auto;
+	
+}
+
+.search_butt:hover{
+	background-color:#F00;
+	cursor:pointer;
+}
+
+#image_container{
+	width:680px;
+	height:auto;
+	float:left;
+	margin-left:10px;
+}
+
+.images{
+	margin-left:60px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.image_row{
+	background-color:#515151;
+}
+
+.code_row{
+	background-color:#515151;
+	color:#000;
+	font-family:"DIN";
+	font-size:12px;
+}
+
+.image_row2{
+	background-color:#D3D3D3;
+}
+
+.code_row2{
+	background-color:#D3D3D3;
+	color:#000;
+	font-family:"DIN";
+	font-size:12px;
+}
+
+.logo3{
+	background-color:#333;
+	width:100%;
+	height:130px;
+	margin:auto;
+	clear:both;
+}
+
+.edit_link{
+	text-decoration:none;
+}
+
+.edit_link:hover{
+	opacity:0.6;
+}
+
+.spec{
+	font-family:"DIN";
+	color:#666;
+}
+
+.remove_data{
+	margin-left:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-family:"DIN"
+}
+
+.de_but{
+	background-color:#F00;
+}
+
+.de_but:hover{
+	background-color:#C03;
+	cursor:pointer;
+}
+
+.raw1{
+	background-color:#7F7F7F;
+}
+
+.log_detail{
+	margin-left:50px;
+	margin-bottom:10px;
+	margin-top:10px;
+	font-family:"DIN";
+}
+
+.customer{
+	margin-bottom:10px;
+	margin-top:10px;
+	font-family:"DIN";
+	font-size:14px;
+}

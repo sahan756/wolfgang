@@ -1,0 +1,37 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Wolfgang Admin Pannel</title>
+<link rel="stylesheet"  type="text/css" href="css/style_admin_page.css" />
+ <?php// echo output_message($message);?>
+ <?php // echo $_SESSION['username']; ?>
+</head>
+
+<body>
+ <div id="wrap">
+ 	<center><h2>Admin Pannel</h2></center>
+        <?php 
+        $user = User::find_by_id($session->user_id);
+        echo $user->username;
+ ?>
+    <p class="para"><a href="logout.php" style="color:#069;">Logout</a></p>
+    <br/>
+   <center><img src="images/logo-02-01 small.png" /></center><br/>
+   
+      <div id="nav">
+      	<ul class="menu">
+        	<li class="topic"><center>Controls</center></li>
+        	<li class="detail"><a class="tab" href="admin_page.php">Add Product</a></li>
+            <li class="detail"><a class="tab" href="list_photos.php">Remove Product</a></li>
+            <li class="detail"><a class="tab" href="edit_product.php">Edit Product</a></li>
+            <li class="detail"><a class="tab" href="edit_product_image.php">Edit Product Image</a></li>
+            <li class="detail"><a class="tab" href="#">Viwe Invoice</a></li>
+            <li class="detail"><a class="tab" href="#">Manege Customer</a></li>
+            <li class="detail"><a class="tab" href="editadmin.php">Edit Profile</a></li>
+	    <br/><br/>
+	    <li class="detail"><center><a href="create_newadmin.php">Create New Admin</a></center></li>
+	    <li class="detail"><center><a href="logfile.php">Log History</a></center></li>
+        </ul>
+      </div> 

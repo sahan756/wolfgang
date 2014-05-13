@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* CSS Document */
+
+.register_head{
+	font-weight:100;
+	color:#7E7E7E;
+	letter-spacing:3px;
+	font-style:normal;
+	font-size:24px;
+}
+
+.register_today{
+	border:solid #E8E8E8 1px;
+	width:600px;
+	height:auto;
+	float:left;
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+.sign_in{
+	border:solid #E8E8E8 1px;
+	width:330px;
+	height:auto;
+	float:right;
+	padding-bottom:5px;
+}
+
+.inner_head{
+	font-size:14px;
+	color:#7E7E7E;
+	letter-spacing:2px;
+	font-style:normal;
+	font-weight:100;
+	padding-left:10px;
+	padding-top:10px;
+}
+
+.info{
+	font-size:10px;
+	color:#7E7E7E;
+	padding-left:10px;
+	margin-top:-16px;
+}
+
+.requerd{
+	color:#FF0000;
+	font-weight:600;
+	font-size:10px;
+	float:left;
+	margin-top:-5px;
+	margin-left:10px;
+}
+
+p.topic{
+	color:#747474;
+	font-size:12px;
+	margin-left:5px;
+	margin-top:-10px;
+}
+	
+.textarea{
+	width:250px;
+	height:25px;
+	margin-left:16px;
+	margin-top:-23px;
+	margin-bottom:5px;
+}
+
+p.topic2{
+	color:#747474;
+	font-size:12px;
+	margin-left:5px;
+	margin-top:5px;
+}
+	
+.textarea2{
+	width:250px;
+	height:25px;
+	margin-left:16px;
+	margin-top:-23px;
+	margin-bottom:10px;
+}
+
+.s_button{
+	background-color:#B30000;
+	color:#FFF;
+	padding:5px;
+	border:none;
+	margin-top:5px;
+	cursor:pointer;
+}
+
+.forget{
+	font-size:10px;
+	color:#1C3C77;
+}
+
+.forget:hover{
+	text-decoration:none;
+}
+
+p.rawone{
+	font-size:12px;
+	color:#747474;
+}
+
+.main-Toc{
+	font-size:14px;
+	color:#747474;
+	font-weight:300;
+}
+
+.rawtwo{
+	font-size:12px;
+	color:#747474;
+	margin-left:254px;
+	margin-top:-10px;
+}
+
+.space{
+	margin-left:10px;
+}
+
+.new_user{
+	width:400px;
+	font-size:12px;
+	padding-left:20px;
+	padding-bottom:30px;
+}
+
+
+.create_new_cus{
+	padding:5px;
+	margin-top:20px;
+	background-color:#F00;
+	color:#FFF;
+}
+
+.create_new_acc{
+	color:#FFF;
+	text-decoration:none;
+}
+
+.create_new_acc:hover{
+	text-decoration:underline;
+}

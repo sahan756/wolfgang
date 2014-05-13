@@ -1,0 +1,210 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	color:#000000;
+	background-color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#wrap{
+	margin-left:auto;
+	margin-right:auto;
+	width:945px;
+	height:auto;
+}
+
+.para{
+	margin-right:0px;
+	float:right;
+	margin-top:-40px;
+	font-size:10px;
+}
+
+#tile_wrap{
+	width:945px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	clear:both;
+	margin-top:40px;
+}
+
+#my_profile{
+	width:600px;
+	height:200px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	background-color:#0033CC;
+	float:left;
+}
+
+#password{
+	width:335px;
+	height:200px;
+	margin-top:10px;
+	margin-left:5px;
+	margin-right:0;
+	background-color:#F60;
+	float:left;
+}
+
+#new_admin{
+	width:400px;
+	height:300px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	background-color:#939;
+	float:left;
+}
+
+#invoice{
+	width:335px;
+	height:300px;
+	margin-top:10px;
+	margin-left:5px;
+	margin-right:0;
+	background-color:#CCC;
+	float:left;
+}
+
+#add_product{
+	width:650px;
+	height:180px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:0;
+	background-color:#F00;
+	float:right;
+}
+
+#edit_product{
+	width:500px;
+	height:320px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:5px;
+	background-color:#009900;
+	float:left;
+}
+
+#remove_product{
+	width:435px;
+	height:320px;
+	margin-top:10px;
+	margin-left:5px;
+	margin-right:0;
+	background-color:#999966;
+	float:left;
+}
+
+#customer{
+	width:945px;
+	height:230px;
+	margin-top:10px;
+	margin-left:0;
+	margin-right:0;
+	background-color:#663399;
+	float:left;
+}
+
+.my_style:hover{
+	opacity:0.7;
+}
+
+.image_in{
+	margin-left:20px;
+	padding-bottom:-10px;
+	margin-top:20px; 
+	float:left;
+}
+
+.image_in_02{
+	margin-left:10px;
+	padding-bottom:-10px;
+	margin-top:40px; 
+	float:left;
+}
+
+.profile_link{
+	text-decoration:none;
+}
+
+.toc{
+	font-family:"DIN";
+	font-size:43px;
+	color:#FFF;
+	font-weight:200;
+	margin-top:80px;
+	padding-left:30px;
+}
+
+.toc:hover{
+	color:#DFDFDF;
+	font-weight:100;
+}
+
+
+.toc2{
+	font-family:"DIN";
+	font-size:43px;
+	color:#FFF;
+	font-weight:200;
+	margin-top:40px;
+}
+
+.toc2:hover{
+	color:#DFDFDF;
+	font-weight:100;
+}
+
+.toc3{
+	font-family:"DIN";
+	font-size:43px;
+	color:#FFF;
+	font-weight:200;
+	margin-top:120px;
+}
+
+.toc3:hover{
+	color:#A4A477;
+	font-weight:100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
