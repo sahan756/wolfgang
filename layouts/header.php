@@ -60,13 +60,13 @@ $acc_types = CategoryType::find_all_by_cat_id(CAT_ACC);
             if(!empty($user)){
                 $link = "logout.php";
                 $link_text = "logout";
-                $text = "Hello, " . $user->cfname . " " . $user->clname . " ";
+                $text = "Hello, " . $user->cfname . " " . $user->clname . " ";                
             } else {
                 $link = "registern.php";
-                $link_text = "Sign in or Register";
+                $link_text = "Sign in or Register";                
             }
  ?>
-            <p class="headsec"><?php echo $text; ?><a class="headsec_link" href="<?php echo $link ?>"><?php echo $link_text ?></a> | <a class="headsec_link" href="myacc.php">My Account</a> | <a class="headsec_link" href="my_cart.php"><strong><img src="images/shopping7.png"> My Cart</strong></a></p><br/>
+            <p class="headsec"><?php echo $text; ?><a class="headsec_link" href="<?php echo $link ?>"><?php echo $link_text ?></a> | <a class="headsec_link" href="myacc.php">My Account</a> | <a class="headsec_link" href="my_wishlist.php">My Wishlist</a> | <a class="headsec_link" href="my_cart.php"><strong><img src="images/shopping7.png"> My Cart</strong></a></p><br/>
             <p class="headsec">Help Line <strong><span class="hotline">+94 77 600 1 600</spansz></strong></p><br/>
             <p class="headsec"><span style="font-size:10px;">( open 24 hourse evereyday )</span></p><br/>
 

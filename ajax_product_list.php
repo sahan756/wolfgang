@@ -28,8 +28,11 @@ $sql .= "OFFSET {$pagination->offset()}";
 
 $products = Product::find_by_sql($sql);
 
-$wishlist = new Wishlist();
-$wishlist->get_wishlist();
+//$wishlist = new Wishlist();
+//$wishlist->get_wishlist();
+
+$wish_list = Wishlist::get_wishlist();
+//var_dump($wish_list);
 ?>
 
 
@@ -45,7 +48,7 @@ $wishlist->get_wishlist();
                     <p class="cart">
                         <a href="my_cart.php?cart=add&item=<?php echo $product->id ?>&qty=1" class="addtocart"><img src="images/shopping7.png"> Add To Cart</a>
                     </p><p class="wishlist">
-                        <?php if(empty($session->wishlist[$product->id])){ ?> 
+                        <?php if(empty($wish_list[$product->id])){ ?> 
                         <a href="add_wishlist.php?item=<?php echo $product->id; ?>" class="wishlist_link">Add to wishlist</a>
                         <?php } else {
                             ?>

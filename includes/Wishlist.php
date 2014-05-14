@@ -151,20 +151,31 @@ class Wishlist {
         return($database->affected_rows() == 1) ? true : false;
     }    
     
-    public function get_wishlist(){
+    public static function get_wishlist(){
         global $session;
+//        if(!empty($session->cusid)){
+//            $list = self::find_by_cus_id($session->cusid);
+//            //$this->wishlist = $list;
+//            //var_dump($list);
+//            if(!empty($list)){
+//                $session->wishlist = array();
+//                foreach ($list as $value) {
+//                    //var_dump($value);
+//                    $session->wishlist[$value->item_id] = $value;
+//                }
+//            }
+//        }
+        $items = array();        
         if(!empty($session->cusid)){
-            $list = self::find_by_cus_id($session->cusid);
-            //$this->wishlist = $list;
-            //var_dump($list);
-            if(!empty($list)){
-                $session->wishlist = array();
+            $list = self::find_by_cus_id($session->cusid);            
+            if(!empty($list)){                
                 foreach ($list as $value) {
                     //var_dump($value);
-                    $session->wishlist[$value->item_id] = $value;
+                    $items[$value->item_id] = $value;
                 }
             }
         }
+        return $items;
     }
 }
 

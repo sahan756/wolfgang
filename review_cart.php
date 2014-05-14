@@ -63,21 +63,24 @@ if (isset($_POST['purch'])) {
 </tr>-->
 
 
-<?php
-foreach ($products as $product) {
-    $item = $product['item'];
-    $subTotal = $item->price * $product['quantity'];
-    ?>
-            <tr class="content_cart">
-            <input type="hidden" name="item[]" value="<?php echo $item->id ?>" />
-            <input type="hidden" name="prize[]" value="<?php echo $item->price ?>" />
-            <td><img src="public/<?php echo $item->image_path() ?>" align="left" width="75"><p class="name_shoe"><?php echo $item->title ?></p></td>
-            <th>WLF0512484AD42</th>
-            <th>LKR <?php echo number_format($item->price, 2); ?></th>
-            <th><?php echo $product['quantity'] ?></th>
-            <th>LKR <?php echo number_format($subTotal, 2); ?></th>            
-            </tr>
-        <?php }
+        <?php
+        if (!empty($products)) {
+            foreach ($products as $product) {
+                $item = $product['item'];
+                $subTotal = $item->price * $product['quantity'];
+                ?>
+                <tr class="content_cart">
+                <input type="hidden" name="item[]" value="<?php echo $item->id ?>" />
+                <input type="hidden" name="prize[]" value="<?php echo $item->price ?>" />
+                <td><img src="public/<?php echo $item->image_path() ?>" align="left" width="75"><p class="name_shoe"><?php echo $item->title ?></p></td>
+                <th>WLF0512484AD42</th>
+                <th>LKR <?php echo number_format($item->price, 2); ?></th>
+                <th><?php echo $product['quantity'] ?></th>
+                <th>LKR <?php echo number_format($subTotal, 2); ?></th>            
+                </tr>
+            <?php
+            }
+        }
         ?>
 
     </table>
