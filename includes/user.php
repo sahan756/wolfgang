@@ -130,6 +130,8 @@ class User extends DatabaseObject{
     
     public function create_user(){
         global $database;
+        //create hash before insert
+        $this->password = self::get_encrypted_password($this->password);
         
         $attributes = $this->attributes();
         
@@ -150,7 +152,8 @@ class User extends DatabaseObject{
     
     public function create(){
         global $database;
-        
+        //create hash before insert
+        $this->password = self::get_encrypted_password($this->password);
         $attributes = $this->attributes();
         
         $sql="INSERT INTO ".self::$table_name." (";
@@ -171,6 +174,8 @@ class User extends DatabaseObject{
     public function update(){
         
         global $database;
+        //create hash before insert
+        $this->password = self::get_encrypted_password($this->password);
         $attributes = $this->sanitized_attributes();
         $attribute_pairs= array();
         foreach($attributes as $key=>$value){
