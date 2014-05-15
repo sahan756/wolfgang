@@ -10,6 +10,7 @@ class Wishlist {
     public $item_id;
     public $date_time;
     public $errors = array();
+    public $product;
     
     private static function instantiate($record) {
         $object = new self();

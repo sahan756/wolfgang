@@ -9,19 +9,23 @@ if (!isset($session->cusid)) {
     exit;
 }
 
-if(isset($_REQUEST['list']) && $_REQUEST == "remove"){
-//    if(!empty($_REQUEST['item'])){
-//        $itemId = intval($_REQUEST['item']);
-//        Wishlist::
-//    }
+if(isset($_REQUEST['list']) && $_REQUEST['list'] == "remove"){
+    if(!empty($_REQUEST['wid'])){
+        $wid = intval($_REQUEST['wid']);
+        $wish = new Wishlist();
+        $wish->id = $wid;
+        $wish->delete();
+        redirect_to("my_wishlist.php");
+    }
 }
 
 $wishlist_items = Wishlist::get_wishlist();
 
-$products = array();
+//$products = array();
 if(!empty($wishlist_items)){
-    foreach ($wishlist_items as $value) {
-        $products[] = Product::find_by_id($value->item_id);        
+    foreach ($wishlist_items as $key => $value) {
+        $wishlist_items[$key]->product = Product::find_by_id($value->item_id);
+        //$products[] = 
     }
 }
 ?>
@@ -42,9 +46,9 @@ if(!empty($wishlist_items)){
             <th></th>
         </tr>
         <?php
-        if (!empty($products)) {
-            foreach ($products as $item) {
-                //$item = $product['item'];
+        if (!empty($wishlist_items)) {
+            foreach ($wishlist_items as $value) {
+                $item = $value->product;
                 ?>
                 <tr class="content_cart">
                 <input type="hidden" name="item[]" value="<?php echo $item->id ?>" />
@@ -52,7 +56,7 @@ if(!empty($wishlist_items)){
                 <td><img src="public/<?php echo $item->image_path() ?>" align="left" width="75"><p class="name_shoe"><?php echo $item->title ?></p></td>
                 <th>WLF0512484AD42</th>
                 <th>LKR <?php echo number_format($item->price, 2); ?></th>   
-                <th><a href="?list=remove&item=<?php echo $item->id ?>" ><img src="images/recycle2.png"></a></th>
+                <th><a href="?list=remove&wid=<?php echo $value->id ?>" ><img src="images/recycle2.png"></a></th>
                 </tr>
             <?php
             }
