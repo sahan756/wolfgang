@@ -3,8 +3,8 @@
 //define('DS',         DIRECTORY_SEPARATOR);
 define('DS',         '/');
 
-//define('SITE_ROOT',           DS.'wamp'.DS.'www'.DS.'php_sandbox'.DS.'Admin_panel');
-define('SITE_ROOT',           DS.'xampp'.DS.'htdocs'.DS.'php_sandbox'.DS.'wolfgang');
+define('SITE_ROOT',           DS.'wamp'.DS.'www'.DS.'php_sandbox'.DS.'Admin_panel');
+//define('SITE_ROOT',           DS.'xampp'.DS.'htdocs'.DS.'php_sandbox'.DS.'wolfgang');
  
 define('LIB_PATH',            SITE_ROOT.DS.'includes');
 
