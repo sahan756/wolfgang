@@ -59,12 +59,12 @@ function datetime_to_text($datetime = "") {
     return strftime("%B %d, %Y at %I:%M %p", $unixdatetime);
 }
 
-include_once 'phpmailer/PHPMailerAutoload.php';
+//include_once 'phpmailer/PHPMailerAutoload.php';
 
 function sendMail($to, $subject = "Test subject", $body = "Test body") {
     date_default_timezone_set('Etc/UTC');
 
-//require 'includes/phpmailer/PHPMailerAutoload.php';
+require 'includes/phpmailer/PHPMailerAutoload.php';
 //Create a new PHPMailer instance
     $mail = new PHPMailer();
 //Tell PHPMailer to use SMTP
