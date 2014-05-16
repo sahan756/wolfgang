@@ -8,15 +8,16 @@
     ?>
      <?php
     
-    $photo = User::find_by_id($session->user_id);
+    $user = User::find_by_id($session->user_id);
     //$photo = User::find_by_id($_REQUEST['id']);
+    $oldUsername = $user->username;
     
     
     if (isset($_POST['commit'])) {
 
 
-        if ($photo->id == 1) {
-            $session->message("The admin {$photo->username} cant update");
+        if ($user->id == 1) {
+            $session->message("The admin {$user->username} cant update");
             redirect_to('edit_user.php');
         } else {
 
@@ -26,19 +27,25 @@
 
 //    $photo->username = trim($_POST['login']);
 //    $photo->password = trim($_POST['password']);
-            $photo->username = $username;
+            $user->username = $username;
             
 
-            $update_username = $photo->update();
+            //$update_username = $user->update();
+            $update_username = $user->update_username();
             //var_dump($update_product);
 
             if ($update_username) {
                 //$new_comment->try_to_send_notification();
-                $session->message("The admin {$photo->username} updated");
+                //$session->message("The admin {$user->username} updated");
+                $message = "The admin {$user->username} updated";
                 //redirect_to("editadmin.php");
             } else {
-                $session->message("there is error updating admin");
+                //$session->message("there is error updating admin");
+                $message = !empty($user->errors['username']) ? $user->errors['username'] : '';
+                $user->username = $oldUsername;
+                //var_dump($user->errors);
             }
+            //redirect_to('edit_user.php');
         }
     }
     
@@ -51,7 +58,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Edit Your Password Please</title>
+<title>Edit Your Username</title>
 <link rel="stylesheet" href="css/popup_style.css" type="text/css">
 </head>
 
@@ -63,12 +70,16 @@
 	
    <div class="content">
    <br/>
-    <center><h1 class="topic">Enter Your Currunt Name</h1><form><input class="text_box" type="text" value="<?php echo $photo->username; ?>"></form></center>
+    <center><h1 class="topic">Your Current Name</h1>
+        <input style="margin-left: 24px;" class="text_box" type="text" value="<?php echo $user->username; ?>" disabled="true"/>
+    </center>
     <br/>
-    <center><h1 class="topic">Enter Your New Name</h1><form><input class="text_box2" name="login"  type="text"></form></center>
+    <center><h1 class="topic">Enter Your New Name</h1>
+        <input class="text_box2" name="login"  type="text" />
+    </center>
     <br/>
    
-    <center><input class="buttons"  type="submit" name="commit" value="Change" onclick="return confirm('Are you shure you want to Edit');">
+    <center><input class="buttons"  type="submit" name="commit" value="Change" onclick="return confirm('Are you sure you want to edit?');">
     <input class="buttons" type="button" name="cancel" value="Cancel"></center>
     <br/>
     </div>

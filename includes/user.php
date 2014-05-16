@@ -8,6 +8,7 @@ class User extends DatabaseObject{
     public $id;
     public $username;
     public $password;
+    public $errors = array();
     //public $first_name;
    // public $last_name;
     
@@ -202,6 +203,25 @@ class User extends DatabaseObject{
     
     static function get_encrypted_password($password){
         return md5($password);
+    }
+    
+    function update_username(){
+        $this->validate_user(array('username'));
+        if(empty($this->errors)){
+            return $this->update();               
+        } else {            
+            return false;
+        }
+    }
+    
+    function validate_user($fields = array()){
+        $validation = new Validation();    
+        //var_dump($fields);
+        if(in_array('username', $fields)){
+            if($validation->isEmpty($this->username)){
+                $this->errors['username'] = "Username cannot be empty";
+            }
+        }
     }
 }
 
