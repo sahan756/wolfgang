@@ -1,7 +1,8 @@
 <?php
-require_once 'includes/phpmailer/PHPMailerAutoload.php';
-require_once './includes/phpmailer/class.phpmailer.php';
 require_once './includes/initialize.php';
+require_once './includes/phpmailer/PHPMailerAutoload.php';
+require_once './includes/phpmailer/class.phpmailer.php';
+require_once './includes/phpmailer/class.smtp.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
