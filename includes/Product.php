@@ -45,7 +45,7 @@ class Product extends DatabaseObject {
     public function attach_file($file, $img_no, $required = FALSE) {
 
         if (!$file || empty($file) || !is_array($file)) {
-            $this->errors['file'] = "No file was uploaded";
+            $this->errors['file'] = "No, file was uploaded";
             return false;
         } elseif ($file['error'] != UPLOAD_ERR_OK) {
             if (!$required && $file['error'] == UPLOAD_ERR_NO_FILE) {
