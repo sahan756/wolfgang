@@ -17,13 +17,14 @@ redirect_to("login.php");
    
    $Product= new Product();
    $Product->id=$_GET['id'];
+   $potoid=$_GET['photo'];
    
    $Product=Product::find_by_id($_GET['id']);
  // $deleted =  $Product->delete_one();
   
   
    
-   if($Product->destroyone()){
+   if($Product->destroyone($potoid)){
     $session->message("The Image was deleted");
     redirect_to('edit_click.php?id='.$Product->id);
     
