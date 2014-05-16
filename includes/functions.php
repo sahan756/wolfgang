@@ -64,7 +64,7 @@ function datetime_to_text($datetime = "") {
 function sendMail($to, $subject = "Test subject", $body = "Test body") {
     date_default_timezone_set('Etc/UTC');
 
-require 'includes/phpmailer/PHPMailerAutoload.php';
+require_once 'includes/phpmailer/PHPMailerAutoload.php';
 //Create a new PHPMailer instance
     $mail = new PHPMailer();
 //Tell PHPMailer to use SMTP

@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/phpmailer/PHPMailerAutoload.php';
 require_once './includes/initialize.php';
 /*
  * To change this template, choose Tools | Templates
