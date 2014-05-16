@@ -22,6 +22,7 @@ class Product extends DatabaseObject {
     public $type_id;
     public $price;
      public $quan;
+     public $slected_image;
     public $errors = array();
     public $files = array();
     protected $upload_errors = array(
@@ -241,6 +242,18 @@ class Product extends DatabaseObject {
 
         return FALSE;
     }
+    
+    public function delete_one(){
+         global $database;
+         
+         $sql= "UPDATE " . self::$table_name . " ";
+         $sql .= "SET image_2=NULL ";
+         $sql .= "WHERE id=" . $database->escape_value($this->id);
+         
+          $database->query($sql);
+        return($database->affected_rows() == 1) ? true : false;
+    }
+    
 
     public function delete() {
         global $database;
@@ -323,6 +336,27 @@ class Product extends DatabaseObject {
             return false;
         }
     }
+    
+    public function destroyone() {
+
+        if ($this->delete_one()) {
+            //$target_path = SITE_ROOT . DS . 'public' . DS . $this->image_path();
+             $path = SITE_ROOT . $this->upload_dir . $this->id;
+         //unlink($path.'/'.$this->image_1) ;
+         unlink($path.'/'.$this->image_2) ;
+         //unlink($path.'/'.$this->image_3) ;
+         //unlink($path.'/'.$this->image_4) ;
+         return true;
+        } else {
+            return false;
+        }
+    }
+    
+    
+    
+    
+    
+    
 
     public static function get_price_range($range_id) {
         $price = array();

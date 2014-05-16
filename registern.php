@@ -40,6 +40,7 @@ if(isset($_POST['esign'])){
     $photo= new Customers();
     
     
+    
     $photo->cfname=$_POST['cfname'];
     $photo->clname=$_POST['clname'];
     $photo->cadress1=$_POST['cadress1'];
