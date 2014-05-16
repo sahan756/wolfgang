@@ -66,10 +66,10 @@ $product_type = CategoryType::find_by_id($photo->type_id);
 
             <td><?php echo $photo->title; ?></td>
             <td><?php echo $product_cat->category; ?></td>
-            <td><?php echo $product_size->size; ?></td>
-            <td><?php echo $product_color->color; ?></td>
+            <td><?php echo !empty($product_size->size) ? $product_size->size : "N/A" ; ?></td>
+            <td><?php echo !empty($product_color->color) ? $product_color->color: "N/A"; ?></td>
             <td><?php echo $photo->price; ?></td>
-            <td><?php echo $product_type->type; ?></td>
+            <td><?php echo !empty($product_type->type) ? $product_type->type : "N/A"; ?></td>
             <td>
             <!--<a href="comments.php?id=<?php echo $photo->id; ?>"> -->
     <?php //echo count($photo->comments()); ?></td>
