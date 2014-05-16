@@ -130,7 +130,7 @@ require_once('../layouts/header1.php');
             <?php if (!empty($photo->image_2)) {
                 ?>
                 <img src="../<?php echo $photo->image_path(2); ?>" width="100"/>
-                <a href="#">Delete</a>
+                <a href="delete_one_photo.php?id=<?php echo $photo->id;  ?>&photo=2">Delete</a>
             <?php } else {
                 ?>
                 <div class="no_img_div border_right_none"></div>
@@ -144,7 +144,7 @@ require_once('../layouts/header1.php');
             <?php if (!empty($photo->image_3)) {
                 ?>
                 <img src="../<?php echo $photo->image_path(3); ?>" width="100"/>
-                <a href="#">Delete</a>
+                <a href="delete_one_photo.php?id=<?php echo $photo->id;  ?>&photo=3">Delete</a>
             <?php } else {
                 ?>
                 <div class="no_img_div border_right_none"></div> 
@@ -158,7 +158,7 @@ require_once('../layouts/header1.php');
             <?php if (!empty($photo->image_4)) {
                 ?>
                 <img src="../<?php echo $photo->image_path(4); ?>" width="100"/>
-                <a href="#">Delete</a>
+                <a href="delete_one_photo.php?id=<?php echo $photo->id;  ?>&photo=4">Delete</a>
             <?php } else {
                 ?>
                 <div class="no_img_div"></div>   

@@ -22,6 +22,8 @@ class Product extends DatabaseObject {
     public $type_id;
     public $price;
      public $quan;
+     public $potoid;
+     public $slected_image;
     public $errors = array();
     public $files = array();
     protected $upload_errors = array(
@@ -241,6 +243,21 @@ class Product extends DatabaseObject {
 
         return FALSE;
     }
+    
+    public function delete_one($potoid){
+         global $database;
+         
+         
+         
+         
+         $sql= "UPDATE " . self::$table_name . " ";
+         $sql .= "SET image_".$potoid."=NULL ";
+         $sql .= "WHERE id=" . $database->escape_value($this->id);
+         
+          $database->query($sql);
+        return($database->affected_rows() == 1) ? true : false;
+    }
+    
 
     public function delete() {
         global $database;
@@ -323,6 +340,28 @@ class Product extends DatabaseObject {
             return false;
         }
     }
+    
+    public function destroyone($potoid) {
+
+        if ($this->delete_one($potoid)) {
+            //$target_path = SITE_ROOT . DS . 'public' . DS . $this->image_path();
+             $path = SITE_ROOT . $this->upload_dir . $this->id;
+         //unlink($path.'/'.$this->image_1) ;
+         $property="image_$potoid";
+         unlink($path.'/'.$this->$property) ;
+         //unlink($path.'/'.$this->image_3) ;
+         //unlink($path.'/'.$this->image_4) ;
+         return true;
+        } else {
+            return false;
+        }
+    }
+    
+    
+    
+    
+    
+    
 
     public static function get_price_range($range_id) {
         $price = array();
