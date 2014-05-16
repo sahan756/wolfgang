@@ -19,7 +19,9 @@ if(isset($_REQUEST['list']) && $_REQUEST['list'] == "remove"){
     }
 }
 
-$wishlist_items = Wishlist::get_wishlist();
+$wishlist = new Wishlist();
+$wishlist_items = $wishlist->get_wishlist();
+//$wishlist_items = Wishlist::get_wishlist();
 
 //$products = array();
 if(!empty($wishlist_items)){
