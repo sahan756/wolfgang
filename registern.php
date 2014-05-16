@@ -62,6 +62,11 @@ if(isset($_POST['esign'])){
     if($ccpassword==$photo->cpassword)
     {
     if($photo->save()){
+	
+	
+	$status = sendMail($photo->cemail, "Wolfgang registration", "welcome  start shopping . dont get caught its fake...");
+
+	
         $session->message("Registration successfully.{$photo->cfname}. .{$photo->clname}");
         redirect_to('registern.php');
     }else{
