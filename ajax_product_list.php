@@ -28,10 +28,10 @@ $sql .= "OFFSET {$pagination->offset()}";
 
 $products = Product::find_by_sql($sql);
 
-//$wishlist = new Wishlist();
-//$wishlist->get_wishlist();
+$wishlist = new Wishlist();
+$wish_list = $wishlist->get_wishlist();
 
-$wish_list = Wishlist::get_wishlist();
+//$wish_list = Wishlist::get_wishlist();
 //var_dump($wish_list);
 ?>
 
