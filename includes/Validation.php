@@ -37,6 +37,10 @@ class Validation {
     function isNotWholeNumber($input){
         return is_numeric($input) && floor($input) == $input ? FALSE : TRUE;
     }
+    
+    function isNotEqual($input1, $input2){
+        return strcmp($input1, $input2) == 0 ? false : true;
+    }
 }
 
 ?>

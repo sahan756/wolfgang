@@ -80,7 +80,7 @@
     <br/>
    
     <center><input class="buttons"  type="submit" name="commit" value="Change" onclick="return confirm('Are you sure you want to edit?');">
-    <input class="buttons" type="button" name="cancel" value="Cancel"></center>
+    <input class="buttons" type="button" name="cancel" value="Close" onclick="window.close();"></center>
     <br/>
     </div>
    </form>
