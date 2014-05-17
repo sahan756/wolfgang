@@ -17,6 +17,8 @@
     
     
     $status = sendMail($photo->conemail, "Wolfgang "," {$photo->contitle} {$photo->confname} {$photo->conlname} THANK FOR YOUR REVIEW . WE WILL REPLY TO YOUR EMAIL SOON . KEEP SHOPPING");
+    
+    $status2 = sendMail("wolfgang.ltd@gmail.com", "GOT COMMENT"," COMMENT BY {$photo->confname} {$photo->conlname}.COMENT .   {$photo->conmass} . ..... INFORMATION : {$photo->conemail} , {$photo->contel}  ");
    
    
     if($photo->save()){
