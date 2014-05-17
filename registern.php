@@ -123,8 +123,9 @@ if(isset($_POST['esign'])){
 <?php require_once('/layouts/header.php'); ?>     
     <br/>    
     <br/>
-     <?php echo output_message($message); ?>
+    
     <h1 class="register_head">REGISTER WITH US OR SIGN IN</h1>
+     <?php echo output_message($message); ?>
     <hr color="#E8E8E8" size="1px" style="margin-top:-10px;"><br>
     
     <div class="register_today">

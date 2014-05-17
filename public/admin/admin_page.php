@@ -44,7 +44,13 @@ if (isset($_POST['submit'])) {
     $product->price = $_POST['product_price'];
     $product->quan = $_POST['quan'];
 
-    $product->save();
+    if ($product->save()) {
+        $session->message("Photograph upload successfully. by{$username}");
+        redirect_to('admin_page.php');
+    } else {
+        $message = join("<br/>", $photo->errors);
+        echo $message;
+    }
 
     //var_dump($product->errors);
 }
@@ -75,6 +81,7 @@ if (!empty($categories)) {
 require_once('../layouts/header1.php');
 ?>
 <center><h1 class="main_toc5">Add Product</h1></center>
+ <?php echo output_message($message); ?>
 <?php require_once('../layouts/header2.php'); ?>
 
 <style>
