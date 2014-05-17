@@ -41,7 +41,7 @@ $wish_list = $wishlist->get_wishlist();
         <ul class="products">
             <?php foreach ($products as $product) { ?>
                 <li class="item">
-                    <a href="shoe_page01.php?id=<?php echo $product->id; ?>"><img class="imageofproduct" src="public/<?php echo $product->image_path(); ?>"></a><br/>
+                    <a href="shoe_page.php?id=<?php echo $product->id; ?>"><img class="imageofproduct" src="public/<?php echo $product->image_path(); ?>"></a><br/>
                     <p class="p_title">
                         <a href="#" class="P_titlelink"><?php echo $product->title; ?></a>
                     </p><br/><h2 class="price"><b>LKR <?php echo number_format($product->price, 2); ?></b></h2><br/>
