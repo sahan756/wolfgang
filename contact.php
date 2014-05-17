@@ -14,6 +14,9 @@
     $photo->conemail=$_POST['conemail'];
     $photo->contel=$_POST['contel'];
     $photo->conmass=$_POST['conmass'];
+    
+    
+    $status = sendMail($photo->conemail, "Wolfgang "," {$photo->contitle} {$photo->confname} {$photo->conlname} THANK FOR YOUR REVIEW . WE WILL REPLY TO YOUR EMAIL SOON . KEEP SHOPPING");
    
    
     if($photo->save()){
