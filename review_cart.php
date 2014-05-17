@@ -20,19 +20,42 @@ if (!empty($session->cart)) {
 
 if (isset($_POST['purch'])) {
     if (!empty($products)) {
+        $purchases = array();
         foreach ($products as $value) {
 
-            $product = new Purchase();
-
-            $product->customerid = $session->cusid;
-            $product->productid = $value['item']->id;
-            $product->quantity = $value['quantity'];
-            $product->prize = $value['item']->price * $value['quantity'];
-
-
-            $product->save();
-            var_dump($product->errors);
+            $purchase = new Purchase();
+            
+            if($value['item']->quan < $value['quantity']){
+                $purchases = array();
+                if($value['item']->quan == 0){
+                    $msg = "The item {$value['item']->title} just went out of stock";
+                } else {
+                    $msg = "Only {$value['item']->quan} available from {$value['item']->title}";
+                }
+                $session->message($msg);
+                break;
+            }
+            
+            $purchase->customerid = $session->cusid;
+            $purchase->productid = $value['item']->id;
+            $purchase->quantity = $value['quantity'];
+            $purchase->prize = $value['item']->price * $value['quantity'];
+            
+            $purchase->product = $value['item'];
+            $purchases[] = $purchase;
+            //$purchase->save();
+            //var_dump($product->errors);
         }
+        if(!empty($purchases)){
+            foreach ($purchases as $purchase) {
+                if(!empty($purchase->product) && $purchase->save()){
+                    $purchase->product->quan -= $purchase->quantity; 
+                    $purchase->product->save();
+                }
+            }
+            $session->clear_cart();            
+        }
+        redirect_to("my_cart.php");
     }
 }
 ?>

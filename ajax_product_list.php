@@ -46,7 +46,13 @@ $wish_list = $wishlist->get_wishlist();
                         <a href="#" class="P_titlelink"><?php echo $product->title; ?></a>
                     </p><br/><h2 class="price"><b>LKR <?php echo number_format($product->price, 2); ?></b></h2><br/>
                     <p class="cart">
+                        <?php if($product->quan > 0) { ?>
                         <a href="my_cart.php?cart=add&item=<?php echo $product->id ?>&qty=1" class="addtocart"><img src="images/shopping7.png"> Add To Cart</a>
+                        <?php } else {
+                            ?>
+                        <span style="color:#ff0000">Out of stock</span>
+                                <?php
+                        } ?>
                     </p><p class="wishlist">
                         <?php if(empty($wish_list[$product->id])){ ?> 
                         <a href="add_wishlist.php?item=<?php echo $product->id; ?>" class="wishlist_link">Add to wishlist</a>

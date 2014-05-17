@@ -1,5 +1,6 @@
 <!doctype html>
-<?php require_once('/layouts/header.php'); 
+<?php
+require_once('/layouts/header.php');
 
 $productId = !empty($_REQUEST['id']) ? (int) $_REQUEST['id'] : 0;
 
@@ -10,12 +11,11 @@ if (!empty($product)) {
     $cat = ProductCategory::find_by_id($product->cat_id);
     $sizes = CategorySize::find_all_by_cat_id($product->cat_id);
 }
-
 ?>
 
 <br/>    
 <br/>
-<p class="tag_direction2"><a class="readmore" href="index.html">Home</a> > <a class="readmore" href="product_list.php?cat=<?php echo !empty($cat) ? $cat->id : ''; ?>"><?php echo !empty($cat) ? $cat->category : ''; ?></a> > <?php echo $product->title; ?>
+<p class="tag_direction2"><a class="readmore" href="index.html">Home</a> > <a class="readmore" href="product_list.php?cat=<?php echo!empty($cat) ? $cat->id : ''; ?>"><?php echo!empty($cat) ? $cat->category : ''; ?></a> > <?php echo $product->title; ?>
     <br/> 
 <h2 class="product_head2"><?php echo $product->title; ?></h2> </p>
 
@@ -49,28 +49,30 @@ if (!empty($product)) {
 
     </div>
     <script>
-    //initiate the plugin and pass the id of the div containing gallery images
+        //initiate the plugin and pass the id of the div containing gallery images
         //$("#img_01").elevateZoom({gallery: 'gallery_01', galleryActiveClass: 'active', imageCrossfade: true, scrollZoom: true, easing: true, cursor: "crosshair", loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'});
 
-    //pass the images to Fancybox
+        //pass the images to Fancybox
 //        $("#img_01").bind("click", function(e) {
 //            var ez = $('#img_01').data('elevateZoom');
 //            $.fancybox(ez.getGalleryList());
 //            return false;
 //        });
 
-        $("#gal1 a").click(function(){            
+        $("#gal1 a").click(function() {
             var imgPath = $(this).data("image");
-            $("#img_01").fadeOut(200, function(){
+            $("#img_01").fadeOut(200, function() {
                 $("#img_01").attr("src", imgPath);
                 $("#img_01").fadeIn(200);
             });
             return false;
         });
-        
-        function addToCart(itemId){
+
+        function addToCart(itemId) {
             var qty = $("select[name=qty]").val();
-            location.href = "my_cart.php?cart=add&item=" + itemId + "&qty=" + qty;
+            if (parseInt(qty) > 0) {
+                location.href = "my_cart.php?cart=add&item=" + itemId + "&qty=" + qty;
+            }
             return false;
         }
     </script>
@@ -89,9 +91,9 @@ if (!empty($product)) {
 
 <div class="discr">
     <p class="details">Original Napa Leather shoes only from wolfgang. Great Finish and confurteble. Save your budget also.</p>
-    <p class="status_topic">Availability : </p><p class="status"> In stock</p>
+    <p class="status_topic">Availability : </p><p class="status" <?php echo $product->quan <= 0 ? 'style="color:#ff0000"' : ''; ?>> <?php echo $product->quan > 0 ? "In stock" : "Out of stock"; ?></p>
     <p class="price">LKR <?php echo number_format($product->price, 2) ?></p>
-    <p class="p_code">Product Code : </p><p class="code">WLF25412084S</p>
+    <p class="p_code">Product Code : </p><p class="code"><?php echo $product->i_code; ?></p>
     <p class="media"><a href="#"><img src="images/social media/social_facebook_box_blue_16.png" style="padding-right:6px;"></a><a href="#"><img src="images/social media/social_google_box_16.png" style="padding-right:6px;"></a><a href="#"><img src="images/social media/social_twitter_box_blue_16.png"></a></p>
     <br>
     <div class="choice">
@@ -110,10 +112,10 @@ if (!empty($product)) {
 
     <p class="qty">QTY : </p>
     <select class="qty_drop" name="qty" style="background-color:#E6F4FF;">
-        <?php 
+        <?php
         $quantity = intval($product->quan);
         for ($i = 1; $i < $quantity; $i++) {
-            echo '<option value="' . $i . '">'. $i .'</option>';
+            echo '<option value="' . $i . '">' . $i . '</option>';
         }
         ?>        
     </select>

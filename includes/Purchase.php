@@ -15,6 +15,7 @@ class Purchase extends DatabaseObject {
     public $productid;
     public $quantity;
     public $prize;
+    public $product;
     
    
     public $errors = array();

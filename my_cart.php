@@ -80,6 +80,7 @@ if (isset($_POST['purch'])) {
 ?>
 
 <h1 class="cart_head">My Shopping Cart</h1>
+<?php echo output_message($message); ?>
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" >
     <div style="clear: both;"></div>
     <table class="cart_inside">

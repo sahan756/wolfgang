@@ -143,6 +143,7 @@ $sizes = CategorySize::find_all_by_cat_id($prod_cat);
             <br/>
         <?php }
         ?>
+             <?php if (!empty($sizes)) { ?>
         <hr class="head_line"> 
         <p class="category_select">YOUR SIZE</p>
         <br/> 
@@ -171,6 +172,7 @@ $sizes = CategorySize::find_all_by_cat_id($prod_cat);
             <?php } ?>
         </div>
         <br/>
+             <?php } ?>
         <hr class="head_line"> 
         <p class="category_select">PRICE</p>
         <br/> 
