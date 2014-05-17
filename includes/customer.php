@@ -53,6 +53,24 @@ class Customers extends DatabaseObject{
         
     }
     
+     public static function recoverpass($cemail=""){
+        global $database;
+        $cemail = $database->escape_value($cemail);
+        //$cpassword = $database->escape_value($cpassword);
+        //$password = self::get_encrypted_password($password);
+        
+        $sql = "SELECT * FROM coustomer ";
+        $sql .= "WHERE cemail = '{$cemail}' ";
+        //$sql .="And cpassword = '{$cpassword}' ";
+        $sql .= "LIMIT 1";
+        
+        $result_array= self::find_by_sql($sql);
+        return !empty($result_array)?array_shift($result_array): false;
+        
+    }
+    
+    
+    
     public static function find_all(){
         return self::find_by_sql("SELECT * FROM ".self::$table_name);
     
