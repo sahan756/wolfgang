@@ -114,4 +114,21 @@ require_once 'includes/phpmailer/PHPMailerAutoload.php';
     }
 }
 
+function createRandomCode($string) { 
+    //$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    $chars = $string . time();     
+//    $i = 1; 
+//    $code = '' ; 
+//
+//    while ($i <= 16) { 
+//        $num = rand(0,61); 
+//        $tmp = substr($chars, $num, 1); 
+//        $code .= $tmp; 
+//        $i++; 
+//    } 
+
+    return md5($chars); 
+
+} 
+
 ?>

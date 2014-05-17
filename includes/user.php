@@ -170,7 +170,7 @@ class User extends DatabaseObject {
 
         global $database;
         //create hash before insert
-        $this->password = self::get_encrypted_password($this->password);
+        //$this->password = self::get_encrypted_password($this->password);
         $attributes = $this->sanitized_attributes();
         $attribute_pairs = array();
         foreach ($attributes as $key => $value) {
@@ -212,6 +212,7 @@ class User extends DatabaseObject {
     function update_password() {
         $this->validate_user(array('password'));
         if (empty($this->errors)) {
+            $this->password = self::get_encrypted_password($this->password);
             return $this->update();
         } else {
             return false;

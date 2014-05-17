@@ -4,7 +4,7 @@ require_once(LIB_PATH.DS.'database.php');
 class Customers extends DatabaseObject{
     
     protected static $table_name="coustomer";
-    protected static $db_fields = array('cusid', 'cfname','clname','cadress1','cadress2','ccity','cprovince','cpcode','ccounty','csadress1','csadress2','cscity','csprovince','cspcode','cscounty','cemail','cpassword');
+    protected static $db_fields = array('cusid', 'cfname','clname','cadress1','cadress2','ccity','cprovince','cpcode','ccounty','csadress1','csadress2','cscity','csprovince','cspcode','cscounty','cemail','cpassword', 'code');
     public $cusid;
     public $ctitle;
     public $cfname;
@@ -23,6 +23,9 @@ class Customers extends DatabaseObject{
     public $cscounty;
     public $cemail;
     public $cpassword;
+    public $code;
+    
+    public $errors = array();
     //public $first_name;
    // public $last_name;
     
@@ -41,7 +44,7 @@ class Customers extends DatabaseObject{
         global $database;
         $cemail = $database->escape_value($cemail);
         $cpassword = $database->escape_value($cpassword);
-        //$password = self::get_encrypted_password($password);
+        $cpassword = self::get_encrypted_password($cpassword);
         
         $sql = "SELECT * FROM coustomer ";
         $sql .= "WHERE cemail = '{$cemail}' ";
@@ -81,6 +84,13 @@ class Customers extends DatabaseObject{
     public static function find_by_id($id=0){
         global $database;
         $result_array= self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE cusid={$id} LIMIT 1");
+        return !empty($result_array)?array_shift($result_array): false;
+    }
+    
+    public static function find_by_code($code=''){
+        global $database;
+        $code = $database->escape_value($code);
+        $result_array= self::find_by_sql("SELECT * FROM ".self::$table_name." WHERE code='{$code}' LIMIT 1");
         return !empty($result_array)?array_shift($result_array): false;
     }
     
@@ -161,7 +171,7 @@ class Customers extends DatabaseObject{
     
     public function create_user(){
         global $database;
-        
+        $this->cpassword = self::get_encrypted_password($this->cpassword);
         $attributes = $this->attributes();
         
         $sql="INSERT INTO ".self::$table_name." (";
@@ -171,7 +181,7 @@ class Customers extends DatabaseObject{
         $sql .= "')";
         
         if($database->query($sql)){
-            $this->id=$database->insert_id();
+            $this->cusid=$database->insert_id();
             return true;
         
         }else{
@@ -184,6 +194,8 @@ class Customers extends DatabaseObject{
         
         $attributes = $this->attributes();
         
+        $this->cpassword = self::get_encrypted_password($this->cpassword);
+        
         $sql="INSERT INTO ".self::$table_name." (";
         $sql .= join(", ", array_keys($attributes));
         $sql .= ") VALUES ('";
@@ -191,7 +203,7 @@ class Customers extends DatabaseObject{
         $sql .= "')";
         
         if($database->query($sql)){
-            $this->id=$database->insert_id();
+            $this->cusid=$database->insert_id();
             return true;
         
         }else{
@@ -203,6 +215,9 @@ class Customers extends DatabaseObject{
         
         global $database;
         $attributes = $this->sanitized_attributes();
+        
+        //$this->cpassword = self::get_encrypted_password($this->cpassword);
+        
         $attribute_pairs= array();
         foreach($attributes as $key=>$value){
             $attribute_pairs[]="{$key}='{$value}'";
@@ -210,7 +225,7 @@ class Customers extends DatabaseObject{
         
         $sql = "UPDATE ".self::$table_name." SET ";
         $sql .= join(", ", $attribute_pairs);
-        $sql .= " WHERE id=". $database->escape_value($this->id);
+        $sql .= " WHERE cusid=". $database->escape_value($this->cusid);
         
         $database->query($sql);
         return ($database->affected_rows()==1)? true : false;
@@ -219,11 +234,30 @@ class Customers extends DatabaseObject{
         global $database;
         
         $sql = "DELETE FROM ".self::$table_name." ";
-        $sql .= "WHERE id=". $database->escape_value($this->id);
+        $sql .= "WHERE cusid=". $database->escape_value($this->cusid);
         $sql .= " LIMIT 1";
         
         $database->query($sql);
         return($database->affected_rows()==1)? true : false;
+    }
+    
+    public function reset_password(){
+        $validation = new Validation();
+        if($validation->isEmpty($_POST['pass'])){
+            $this->errors['pass'] = "Password cannot be empty";
+        }
+        if($validation->isEmpty($_POST['conf_pass'])){
+            $this->errors['conf_pass'] = "Confirm password cannot be empty";
+        }
+        if($validation->isNotEqual($_POST['pass'], $_POST['conf_pass'])){
+            $this->errors['conf_pass'] = "Password and confirm password does not match";
+        }
+        
+        if(empty($this->errors)){
+            $this->cpassword = self::get_encrypted_password($_POST['pass']);
+            return $this->update();
+        }
+        return false;
     }
     
     static function get_encrypted_password($password){

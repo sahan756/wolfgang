@@ -71,6 +71,7 @@ if (!empty($product)) {
         function addToCart(itemId){
             var qty = $("select[name=qty]").val();
             location.href = "my_cart.php?cart=add&item=" + itemId + "&qty=" + qty;
+            return false;
         }
     </script>
     <style>

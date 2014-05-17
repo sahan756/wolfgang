@@ -1,7 +1,7 @@
 <?php require_once("includes/initialize.php"); ?>
 
 <?php
-
+//echo createRandomCode("sahan756@gmail.com");
 if(isset($_POST['esign'])){
      
     
@@ -16,11 +16,11 @@ if(isset($_POST['esign'])){
     if($found_user){
      //   var_dump($found_user);
         //$session->cu_login($found_user);
-	
-	$status = sendMail($found_user->cemail, "Wolfgang ", "recover your email address  click this link : ");
+	$found_user->code = createRandomCode($found_user->cemail);
+        $found_user->update();
+	$status = sendMail($found_user->cemail, "Wolfgang ", "recover your email address  click this link : \r\n" . SERVER_ADDRESS . "reset_password.php?code={$found_user->code}");
 	
 	if($status){
-    
         //log_action('Login',"{$found_user->username} logged in .");
 	$session->message(" {$found_user->cfname} {$found_user->clname}  , your password recover email has been send . check your inbox");
         redirect_to("forgetpass.php");
