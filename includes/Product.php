@@ -9,9 +9,10 @@ require_once(LIB_PATH . DS . 'database.php');
 class Product extends DatabaseObject {
 
     protected static $table_name = "product";
-    protected static $db_fields = array('id', 'title', 'image_1', 'image_2', 'image_3', 'image_4', 'cat_id', 'size_id', 'color_id', 'type_id', 'price','quan');
+    protected static $db_fields = array('id', 'title','i_code', 'image_1', 'image_2', 'image_3', 'image_4', 'cat_id', 'size_id', 'color_id', 'type_id', 'price','quan');
     public $id;
     public $title;
+    public $i_code;
     public $image_1;
     public $image_2;
     public $image_3;

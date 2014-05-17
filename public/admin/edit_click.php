@@ -47,6 +47,7 @@ if (isset($_POST['submit'])) {
     $photo->attach_file($_FILES['image_3'], 3);
     $photo->attach_file($_FILES['image_4'], 4);
     $photo->title = trim($_POST['title']);
+    $photo->i_code = trim($_POST['i_code']);
     $photo->cat_id = trim($_POST['cat_id']);
     $photo->size_id = trim($_POST['size_' . $photo->cat_id]);
     $photo->color_id = trim($_POST['color_' . $photo->cat_id]);
@@ -171,6 +172,7 @@ require_once('../layouts/header1.php');
     </div>
     <div>
         <br/>Product Name :<?php echo $photo->title; ?>
+        <br/>Product Code :<?php echo $photo->i_code; ?>
         <br>Product Category :<?php echo $product_cat->category; ?>
         <br>Size :<?php echo !empty($product_size) ? $product_size->size : ''; ?>
         <br>Colour :<?php echo !empty($product_color) ? $product_color->color : ''; ?>
@@ -199,6 +201,7 @@ require_once('../layouts/header1.php');
         </p>
 
         <p class="title">Product Name :  <input type="text" name="title" value="<?php echo $photo->title; ?>"/> </p>
+         <p class="title">Product Name :  <input type="text" name="i_code" value="<?php echo $photo->i_code; ?>"/> </p>
         <p class="title">Catogery: 
             <select name="cat_id" >
                 <?php

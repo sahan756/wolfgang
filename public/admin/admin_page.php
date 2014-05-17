@@ -36,6 +36,7 @@ if (isset($_POST['submit'])) {
     $product->attach_file($_FILES['image_3'], 3);
     $product->attach_file($_FILES['image_4'], 4);
     $product->title = $_POST['product_name'];
+    $product->i_code = $_POST['i_code'];
     $product->cat_id = $_POST['category'];
     $product->size_id = isset($_POST['size_' . $product->cat_id]) ? $_POST['size_' . $product->cat_id] : 0;
     $product->color_id = isset($_POST['color_' . $product->cat_id]) ? $_POST['color_' . $product->cat_id] : 0;
@@ -145,6 +146,15 @@ require_once('../layouts/header1.php');
             <input type="text" name="product_name" class="box" />
 	     <?php if(!empty($product->errors['title']))
 	 { echo $product->errors['title'];} ?>
+        </p>
+        <p class="command"><a href="#" class="delete">Reset</a></p>
+        
+        
+        <p class="line">
+        <p class="detail">Product Code : </p>
+        <p class="about_user2"> 
+            <input type="text" name="i_code" class="box" />
+	     
         </p>
         <p class="command"><a href="#" class="delete">Reset</a></p>
        
