@@ -71,6 +71,8 @@ class Customers extends DatabaseObject{
     
     
     
+    
+    
     public static function find_all(){
         return self::find_by_sql("SELECT * FROM ".self::$table_name);
     

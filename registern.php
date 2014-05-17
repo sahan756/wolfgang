@@ -4,6 +4,7 @@
 
 if(isset($_POST['esign'])){
      
+
     
     
     $username=trim($_POST['semail']);
@@ -37,7 +38,35 @@ if(isset($_POST['esign'])){
  
  //$message="";
  if(isset($_POST['submit'])){
-    $photo= new Customers();
+    
+    
+    
+    
+    
+    $username=trim($_POST['cemail']);
+    //$password=trim($_POST['spass']);
+    //$session->message("Username / password wrong");
+   // $hashed_password=sha1($password);
+    
+    $found_user=Customers::recoverpass($username);
+    
+    if($found_user){
+     //   var_dump($found_user);
+        //$session->cu_login($found_user);
+	
+	//$status = sendMail($found_user->cemail, "Wolfgang ", "recover your email address  click this link : ");
+	
+	//if($status){
+    
+        //log_action('Login',"{$found_user->username} logged in .");
+	$session->message(" {$found_user->cfname} {$found_user->clname}  , Already exists your email : {$found_user->cemail} ");
+        redirect_to("registern.php");
+	//}else{
+	   // $session->message("Somthing wrong (internet conenction ). insert your email again and try");
+	//}
+	
+    }else{
+        $photo= new Customers();
     
     
     
@@ -77,6 +106,13 @@ if(isset($_POST['esign'])){
     else{
 	$session->message("Password ddn't match");
     }
+    }
+    
+    
+ 
+    
+    
+    
  }
  
 // $user= new User();
