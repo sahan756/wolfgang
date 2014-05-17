@@ -18,7 +18,7 @@ if(isset($_POST['esign'])){
         $session->cu_login($found_user);
         //log_action('Login',"{$found_user->username} logged in .");
 	$session->message("Login successful {$found_user->cfname} {$found_user->clname}");
-        redirect_to("registern.php");
+        redirect_to("index.php");
 	
     }else{
         $message="Username / password wrong";
@@ -622,7 +622,7 @@ if(isset($_POST['esign'])){
         <p class="topic2"><span class="requerd">*</span>Password</p><br/>
          <input class="textarea2" type="password" name="spass"><br/>
          <center><input type="submit" name="esign" value="Sign In" class="s_button"></center><br/>
-         <a href="#" class="forget">Forget my Password</a>
+         <a href="forgetpass.php" class="forget">Forget my Password</a>
     </div>
       </form>
     
