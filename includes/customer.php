@@ -191,10 +191,8 @@ class Customers extends DatabaseObject{
     
     public function create(){
         global $database;
-        
-        $attributes = $this->attributes();
-        
         $this->cpassword = self::get_encrypted_password($this->cpassword);
+        $attributes = $this->attributes();
         
         $sql="INSERT INTO ".self::$table_name." (";
         $sql .= join(", ", array_keys($attributes));
