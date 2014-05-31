@@ -1,5 +1,10 @@
 <?php require_once("includes/initialize.php"); ?>
 <?php
+if (!isset($session->cusid)) {
+    redirect_to("registern.php");
+    exit;
+}
+
  $photo = Customers::find_by_id(2);
  
  if(isset($_POST['submit'])){
@@ -12,7 +17,7 @@
 
 
 <ol></ol><!doctype html>
-<?php require_once('/layouts/header.php'); ?>
+<?php require_once('layouts/header.php'); ?>
     
      <p class="tag_direction2"><a class="readmore" href="index.html">Home</a> > <a class="readmore" href="#">Contact</a> > Contact</p>
      <?php echo output_message($message); ?>
@@ -51,7 +56,7 @@
 
          </div>
 
-<?php require_once('/layouts/footer.php'); ?>
+<?php require_once('layouts/footer.php'); ?>
 
 
 
